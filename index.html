@@ -3,199 +3,320 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Python OOP Concepts</title>
-    <script src="http://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
-    <script src="http://threejs.org/examples/js/libs/stats.min.js"></script>
-    <style>
-        /* ---- reset ---- */
-        body {
-            margin: 0;
-            font-family: Arial, Helvetica, sans-serif;
-            color: white;
-            text-align: center;
-        }
-
-        /* ---- particles.js container ---- */
-        #particles-js {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            background-color: #000000;
-        }
-
-        /* ---- content ---- */
-        .content {
-            position: relative;
-            z-index: 1;
-            padding: 50px;
-        }
-
-        h1 {
-            font-size: 3em;
-            margin-top: 20px;
-        }
-
-        p {
-            font-size: 1.2em;
-            line-height: 1.6;
-        }
-
-        .container {
-            margin: auto;
-            max-width: 800px;
-        }
-
-        .topic {
-            margin: 20px 0;
-            padding: 20px;
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 8px;
-        }
-
-        .topic h2 {
-            font-size: 2em;
-            margin-bottom: 10px;
-        }
-    </style>
+    <title>Python OOPify</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/particles.js/2.0.0/particles.min.js"></script>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <!-- particles.js container -->
     <div id="particles-js"></div>
-
-    <!-- Main content -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="#intro" class="nav-link">What is OOP?</a>
+            <a href="#objects" class="nav-link">Objects</a>
+            <div class="dropdown">
+                <a href="#pillars" class="nav-link">Four Pillars</a>
+                    <div class="dropdown-content">
+                        <a href="#abstraction" class="dropdown-link">Abstraction</a>
+                        <a href="#encapsulation" class="dropdown-link">Encapsulation</a>
+                        <a href="#inheritance" class="dropdown-link">Inheritance</a>
+                        <a href="#polymorphism" class="dropdown-link">Polymorphism</a>
+                    </div>
+                </div>
+            <a href="#composition" class="nav-link">Composition</a>
+            <a href="/resources/python-oops-guide.pdf" class="nav-link" target="_blank">📚 PDF Guide</a>
+        </div>
+    </nav>
+    
     <div class="content">
-        <h1>Object-Oriented Programming in Python</h1>
-        <p>Learn the fundamental concepts of OOP in Python with interactive examples.</p>
-
-        <div class="container">
-            <div class="topic">
-                <h2>Classes and Objects</h2>
-                <p>Understand how classes and objects form the foundation of OOP.</p>
+        <br><br><br><br><br><br><br>
+        <br><br><br><br>
+        <h1>Python OOPify</h1>
+        <h2>As developers, we often overlook the importance of OOP concepts in Python. This time, let's dive deep and explore them in detail!</h2>
+        <br><br><br><br><br><br><br>
+        <br><br><br><br><br><br><br>
+        <br><br><br><br><br><br><br>
+        <div class="section" id="intro">
+            <div class="concept">🎯 Object Oriented Programming</div>
+            <div class="explanation">
+                OOP organizes code into objects that bundle data and behavior together. Think of objects as blueprints for creating things with both properties and actions.
+                
+                <div class="pillar-grid">
+                    <div class="pillar-card">
+                        <h3>🔄 Scalability</h3>
+                        <p>Easily grow and maintain your codebase</p>
+                    </div>
+                    <div class="pillar-card">
+                        <h3>⚡ Efficiency</h3>
+                        <p>Reuse code and reduce redundancy</p>
+                    </div>
+                    <div class="pillar-card">
+                        <h3>🧩 Modularity</h3>
+                        <p>Break complex problems into manageable pieces</p>
+                    </div>
+                </div>
             </div>
+        </div>
 
-            <div class="topic">
-                <h2>Encapsulation</h2>
-                <p>Learn how to bundle data and methods into a single unit.</p>
+        <div class="section" id="pillars">
+            <div class="concept">🔑 Key OOP Concepts Explained</div>
+            <div class="explanation">
+                <div class="key-points">
+                    <li>Objects and Classes <span>- Blueprint (class) vs Instance (object)</span></li>
+                    <li>Attributes <span>- Data stored inside objects</span></li>
+                    <li>Methods <span>- Functions that objects can perform</span></li>
+                    <li>Constructor <span>- Special method to initialize objects</span></li>
+                </div>
+                
+                <div class="tip-box">
+                    💡 Pro Tip: Think of classes as cookie cutters and objects as the actual cookies. The cookie cutter defines the shape, but each cookie can have different toppings (attributes).
+                </div>
             </div>
+        </div>
 
-            <div class="topic">
-                <h2>Inheritance</h2>
-                <p>Explore how one class can inherit the properties of another.</p>
+        <div class="section" id="objects">
+            <div class="concept">Creating Objects</div>
+            <div class="code-block">
+                <div class="code-content">
+                    <pre>
+                        class Dog:
+                            def __init__(self):
+                                self.legs = 4
+                                self.ears = 2
+                                self.type = 'Goldendoodle'
+                                self.age = 5
+                                self.color = 'Yellow'
+                                
+                        # Creating an instance
+                        milo = Dog()
+                        print(milo.type)  # Output: Goldendoodle
+                    </pre>
+                </div>
             </div>
+        </div>
 
-            <div class="topic">
-                <h2>Polymorphism</h2>
-                <p>Discover how methods can perform differently based on the object.</p>
+        <div class="section" id="abstraction">
+            <div class="concept">Abstraction Example</div>
+            <div class="code-block">
+                <div class="code-content">
+                    <pre>
+                        class Animal:
+                            def __init__(self, species):
+                                self.species = species
+                            
+                            def speak(self):
+                                pass
+
+                        class Dog(Animal):
+                            def speak(self):
+                                return "Woof!"
+
+                        class Cat(Animal):
+                            def speak(self):
+                                return "Meow!"
+
+                        dog = Dog('Canine')
+                        cat = Cat('Feline')
+                        print(dog.speak())  # Output: Woof!
+                        print(cat.speak())  # Output: Meow!
+                    </pre>
+                </div>
+            </div>
+        </div>
+
+        <div class="section" id="encapsulation">
+            <div class="concept">Encapsulation with Getters & Setters</div>
+            <div class="code-block">
+                <div class="code-content">
+                    <pre>
+                        class Enemy:
+                            def __init__(self, type_of_enemy):
+                                self.__type_of_enemy = type_of_enemy
+                                
+                            def get_type_of_enemy(self):
+                                return self.__type_of_enemy
+                                
+                            def set_type_of_enemy(self, type_of_enemy):
+                                self.__type_of_enemy = type_of_enemy
+
+                        enemy = Enemy('Zombie')
+                        print(enemy.get_type_of_enemy())  # Output: Zombie
+                    </pre>
+                </div>
+            </div>
+        </div>
+
+        <div class="section" id="inheritance">
+            <div class="concept">Inheritance Hierarchy</div>
+            <div class="code-block">
+                <div class="code-content">
+                    <pre>
+                        class Animal:
+                            def __init__(self, weight, color, age):
+                                self.weight = weight
+                                self.color = color
+                                self.age = age
+                            
+                            def eat(self):
+                                print('Animal eating')
+
+                        class Dog(Animal):
+                            def __init__(self, weight, color, age, breed):
+                                super().__init__(weight, color, age)
+                                self.breed = breed
+                            
+                            def bark(self):
+                                print('Woof!')
+
+                        my_dog = Dog(20, 'brown', 3, 'Golden Retriever')
+                        my_dog.eat()  # Inherited method
+                        my_dog.bark()  # Dog-specific method
+                    </pre>
+                </div>
+            </div>
+        </div>
+
+        <div class="section" id="polymorphism">
+            <div class="concept">Polymorphism in Action</div>
+            <div class="code-block">
+                <div class="code-content">
+                    <pre>
+                        class Animal:
+                            def speak(self):
+                                pass
+
+                        class Dog(Animal):
+                            def speak(self):
+                                return "Woof!"
+
+                        class Cat(Animal):
+                            def speak(self):
+                                return "Meow!"
+
+                        def animal_sound(animal):
+                            print(animal.speak())
+
+                        # Same function handles different types
+                        dog = Dog()
+                        cat = Cat()
+                        animal_sound(dog)  # Output: Woof!
+                        animal_sound(cat)  # Output: Meow!
+                    </pre>
+                </div>
+            </div>
+        </div>
+
+        <div class="section" id="composition">
+            <div class="concept">Composition Example</div>
+            <div class="code-block">
+                <div class="code-content">
+                    <pre>
+                        class Engine:
+                            def __init__(self, type):
+                                self.type = type
+                            
+                            def start(self):
+                                return f"{self.type} engine starting..."
+
+                        class Car:
+                            def __init__(self, model, engine_type):
+                                self.model = model
+                                self.engine = Engine(engine_type)
+                            
+                            def start_car(self):
+                                return f"{self.model}: {self.engine.start()}"
+
+                        tesla = Car("Model S", "Electric")
+                        print(tesla.start_car())
+                    </pre>
+                </div>
             </div>
         </div>
     </div>
 
     <script>
-        particlesJS("particles-js", {
-            "particles": {
-                "number": {
-                    "value": 160,
-                    "density": {
-                        "enable": true,
-                        "value_area": 800
-                    }
+        particlesJS('particles-js', {
+            particles: {
+                number: { value: 80, density: { enable: true, value_area: 800 } },
+                color: { value: '#00ff88' },
+                shape: { type: 'circle' },
+                opacity: {
+                    value: 0.5,
+                    random: true,
+                    anim: { enable: true, speed: 1, opacity_min: 0.1, sync: false }
                 },
-                "color": {
-                    "value": "#ffffff"
+                size: {
+                    value: 3,
+                    random: true,
+                    anim: { enable: false }
                 },
-                "shape": {
-                    "type": "circle",
-                    "stroke": {
-                        "width": 0,
-                        "color": "#000000"
-                    },
-                    "polygon": {
-                        "nb_sides": 5
-                    }
+                line_linked: {
+                    enable: true,
+                    distance: 150,
+                    color: '#00ff88',
+                    opacity: 0.4,
+                    width: 1
                 },
-                "opacity": {
-                    "value": 1,
-                    "random": true,
-                    "anim": {
-                        "enable": true,
-                        "speed": 1,
-                        "opacity_min": 0,
-                        "sync": false
-                    }
-                },
-                "size": {
-                    "value": 3,
-                    "random": true,
-                    "anim": {
-                        "enable": false,
-                        "speed": 4,
-                        "size_min": 0.3,
-                        "sync": false
-                    }
-                },
-                "line_linked": {
-                    "enable": false,
-                    "distance": 150,
-                    "color": "#ffffff",
-                    "opacity": 0.4,
-                    "width": 1
-                },
-                "move": {
-                    "enable": true,
-                    "speed": 1,
-                    "direction": "none",
-                    "random": true,
-                    "straight": false,
-                    "out_mode": "out",
-                    "bounce": false,
-                    "attract": {
-                        "enable": false,
-                        "rotateX": 600,
-                        "rotateY": 600
-                    }
+                move: {
+                    enable: true,
+                    speed: 3,
+                    direction: 'none',
+                    random: false,
+                    straight: false,
+                    out_mode: 'out',
+                    bounce: false,
                 }
             },
-            "interactivity": {
-                "detect_on": "canvas",
-                "events": {
-                    "onhover": {
-                        "enable": true,
-                        "mode": "bubble"
-                    },
-                    "onclick": {
-                        "enable": true,
-                        "mode": "repulse"
-                    },
-                    "resize": true
-                },
-                "modes": {
-                    "grab": {
-                        "distance": 400,
-                        "line_linked": {
-                            "opacity": 1
-                        }
-                    },
-                    "bubble": {
-                        "distance": 275,
-                        "size": 0,
-                        "duration": 2,
-                        "opacity": 0,
-                        "speed": 3
-                    },
-                    "repulse": {
-                        "distance": 400,
-                        "duration": 0.4
-                    },
-                    "push": {
-                        "particles_nb": 4
-                    },
-                    "remove": {
-                        "particles_nb": 2
-                    }
+            interactivity: {
+                detect_on: 'canvas',
+                events: {
+                    onhover: { enable: true, mode: 'repulse' },
+                    onclick: { enable: true, mode: 'push' },
+                    resize: true
                 }
             },
-            "retina_detect": true
+            retina_detect: true
         });
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+        });
+    });
+});
     </script>
+<footer class="footer">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Made with 💚 by Prapti Sharma</h3>
+                    <br>
+                    <div class="social-links">
+                        <a href="https://github.com/praptisharma28" target="_blank" class="social-link">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="social-icon">
+                                <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+                            </svg>
+                            GitHub
+                        </a>
+                        <a href="https://www.linkedin.com/in/prapti-sharma-796080257/" target="_blank" class="social-link">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="social-icon">
+                                <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+                                <rect x="2" y="9" width="4" height="12"></rect>
+                                <circle cx="4" cy="4" r="2"></circle>
+                            </svg>
+                            LinkedIn
+                        </a>
+                        <a href="/resources/python-oops-guide.pdf" target="_blank" class="resource-link">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="social-icon">
+                                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                                <polyline points="14 2 14 8 20 8"></polyline>
+                                <line x1="12" y1="18" x2="12" y2="12"></line>
+                                <line x1="9" y1="15" x2="15" y2="15"></line>
+                            </svg>
+                            Download OOP Guide from where this was inspired
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </footer>
 </body>
 </html>
